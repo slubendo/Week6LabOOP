@@ -1,7 +1,11 @@
+import {Request, Response} from "express"
+import express from "express";
+
+
 /*
-FIX ME (types) 😭
+FIX ME (types) 😭 
 */
-export const ensureAuthenticated = (req: any, res: any, next: any) => {
+export const ensureAuthenticated = (req: Request, res: Response, next: express.NextFunction) => {
   if (req.isAuthenticated()) {
     return next();
   }
@@ -11,7 +15,7 @@ export const ensureAuthenticated = (req: any, res: any, next: any) => {
 /*
 FIX ME (types) 😭
 */
-export const forwardAuthenticated = (req: any, res: any, next: any) => {
+export const forwardAuthenticated = (req: Request, res: Response, next: express.NextFunction) => {
     if (!req.isAuthenticated()) {
       return next();
     }
