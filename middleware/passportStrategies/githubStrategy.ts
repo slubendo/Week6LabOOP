@@ -12,7 +12,7 @@ const githubStrategy: GitHubStrategy = new GitHubStrategy(
     },
     
     /* FIX ME 😭 */
-    async (req: Request, accessToken: any, refreshToken: any, profile: any, done: any) => {},
+    async (req: Request, accessToken: string, refreshToken: string, profile: void, done: (err?: Error | null, profile?: any) => void) => {},
 );
 
 const passportGitHubStrategy: PassportStrategy = {
